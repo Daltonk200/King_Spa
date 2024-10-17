@@ -1,0 +1,100 @@
+"use client"
+// import MyNavbar from "@/app/components/Navbar";
+import { DarkThemeToggle } from "flowbite-react";
+import MyCarousel from "./components/Carousel";
+import Gallery from "./components/Gallery";
+// import CategoryIcons from "./components/CategoryIcons";
+import BeautySalon from './components/BeautySalon';
+import Testimonials from "./components/Testimonials";
+import Footer from "./components/Footer";
+import ContactInfo from './components/ContactInfo';
+
+export default function Home() {
+  const categories = [
+    { src: "/icons/haircut.svg", alt: "Haircut" },
+    { src: "/icons/massage.svg", alt: "Massage" },
+    { src: "/icons/facial.svg", alt: "Facial" },
+    { src: "/icons/nails.svg", alt: "Nails" },
+    // Add more categories as needed
+  ];
+
+  const galleryImages = [
+    {
+      src: "/Images/IMG-20240827-WA0006.jpg",
+      thumbnail: "/Images/image1_0.jpg",
+      alt: "Gallery Image 1",
+    },
+    {
+      src: "/Images/image1_0.jpg",
+      thumbnail: "/Images/image1_0.jpg",
+      alt: "Gallery Image 2",
+    },
+    {
+      src: "/Images/IMG-20240827-WA0004.jpg",
+      thumbnail: "/Images/IMG-20240827-WA0006.jpg",
+      alt: "Gallery Image 2",
+    },
+    {
+      src: "  /Images/IMG-20240827-WA0008.jpg",
+      thumbnail: "/Images/image1_0.jpg",
+      alt: "Gallery Image 2",
+    },
+    {
+      src: "/Images/image1_0.jpg",
+      thumbnail: "/Images/image1_0.jpg",
+      alt: "Gallery Image 2",
+    },
+
+    // Add more gallery images as needed
+  ];
+
+  const testimonials = [
+    {
+      text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      author: "Rinda Smith",
+      role: "Founder",
+      avatar: "/Images/IMG-20240827-WA0006.jpg", // Replace with actual image URL
+    },
+    {
+      text: "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+      author: "Agustina",
+      role: "Spa Experts",
+      avatar: "/Images/IMG-20240827-WA0008.jpg", // Replace with actual image URL
+    },
+  ];
+
+  return (
+    <>
+      <MyCarousel />
+      <DarkThemeToggle />
+      <main>
+        {/* <section className="bg-purple-100 p-6 text-center">
+        <h1 className="text-3xl md:text-5xl font-semibold">Find a service closer to you</h1>
+        <CategoryIcons icons={categories} />
+      </section> */}
+
+        <section className="mx-auto my-16 max-w-6xl">
+          <h2 className="mb-8 text-center text-4xl font-bold text-pink-500">
+            Our Gallery
+          </h2>
+          <Gallery images={galleryImages} />
+        </section>
+        <section className="bg-red-50 min-h-96 flex flex-col justify-center items-center">
+        <h2 className="mb-8 text-center text-4xl font-bold text-pink-500">
+            WHO ARE WE
+          </h2>
+          <BeautySalon/>
+        </section>
+
+        <section className="bg-gray-50 min-h-96 flex flex-col justify-center items-center">
+          <ContactInfo/>
+        </section>
+
+        <section className="bg-purple-50 p-6">
+          <Testimonials testimonials={testimonials} />
+        </section>
+      </main>
+      <Footer />
+    </>
+  );
+}

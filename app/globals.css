@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .hide-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+  .break-inside-avoid {
+    break-inside: avoid;
+  }
+  .zoom{
+}
+.zoom:hover {
+      overflow: hidden;
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+  }
+
+
+  @media (max-width: 768px) {
+    .sidebar {
+      order: 2;
+    }
+    .category-bar {
+      order: 1;
+    }
+  }
