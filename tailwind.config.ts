@@ -9,7 +9,15 @@ const config: Config = {
     flowbite.content(),
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        pink: {
+          DEFAULT: '#FF69B4', // Primary pink color
+          light: '#FFC0CB',
+          dark: '#C71585',
+        },
+      },
+    },
   },
   plugins: [flowbite.plugin()],
 };

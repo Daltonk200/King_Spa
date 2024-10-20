@@ -2,22 +2,25 @@
 import React, { useState } from "react";
 import { Datepicker } from "flowbite-react";
 import { useMediaQuery } from "react-responsive"; // Use media query for responsiveness
+import { useBooking } from "../context/BookingContext"; // Using your BookingContext
 
 export default function Timepicker() {
-  const [startDate, setStartDate] = useState(new Date());
-  const [selectedTime, setSelectedTime] = useState("");
+  // Get the context values from BookingContext
+  const { selectedDate, setSelectedDate, selectedTime, setSelectedTime } = useBooking();
   const [isOpen, setIsOpen] = useState(false);
+  const [confirmedDateTime, setConfirmedDateTime] = useState("");
 
   const isMobile = useMediaQuery({ maxWidth: 640 }); // Mobile screen width
+
   const handleConfirm = () => {
-    const appointmentDetails = `${startDate.toLocaleDateString()} at ${selectedTime}`;
-    console.log("Selected appointment:", appointmentDetails);
-    setIsOpen(false);
+    const appointmentDetails = `${selectedDate.toLocaleDateString()} at ${selectedTime}`;
+    setConfirmedDateTime(appointmentDetails); // Save confirmed details
+    setIsOpen(false); // Close modal on mobile
   };
 
   const handleDateChange = (date) => {
     if (date >= new Date()) {
-      setStartDate(date); // Only allow future dates
+      setSelectedDate(date); // Only allow future dates
     }
   };
 
@@ -36,10 +39,11 @@ export default function Timepicker() {
           <button
             type="button"
             onClick={() => setIsOpen(true)}
-            className="text-pink-900 bg-pink hover:bg-pink-100 border border-pink-200 focus:ring-4 focus:outline-none focus:ring-pink-100 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-pink-600 dark:bg-pink-800 dark:border-pink-700 dark:text-white dark:hover:bg-gray-700"
+            className="text-pink-500 bg-pink hover:bg-pink-100 border border-pink-200 focus:ring-4 focus:outline-none focus:ring-pink-100 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-pink-600 dark:bg-pink-700 dark:border-pink-600 dark:text-white dark:hover:bg-gray-700"
           >
             Schedule appointment
           </button>
+
           {/* Modal for Mobile View */}
           {isOpen && (
             <div
@@ -75,10 +79,10 @@ export default function Timepicker() {
                   </button>
                 </div>
 
-                <div className="p-4 pt-0">
+                <div className="p-4 pt-0 bg-[aqua]">
                   <div className="mx-auto sm:mx-0 flex justify-center my-5">
                     <Datepicker
-                      selected={startDate}
+                      selected={selectedDate}
                       onChange={handleDateChange}
                       inline
                       minDate={new Date()} // Disable past dates
@@ -130,14 +134,21 @@ export default function Timepicker() {
               </div>
             </div>
           )}
+
+          {/* Show selected date and time on mobile after confirm */}
+          {confirmedDateTime && (
+            <p className="text-sm text-gray-900 mt-4">
+              <strong>Selected:</strong> {confirmedDateTime}
+            </p>
+          )}
         </>
       ) : (
-        // Desktop and Tablet: Inline Layout
-        <div className="flex justify-between mb-6">
+        // Desktop: Always visible
+        <div className="flex justify-between mb-6 w-[54.5rem]">
           <div className="w-1/3">
             <p className="font-bold">Pick a date</p>
             <Datepicker
-              selected={startDate}
+              selected={selectedDate}
               onChange={handleDateChange}
               inline
               minDate={new Date()} // Disable past dates
@@ -165,6 +176,20 @@ export default function Timepicker() {
                 </li>
               ))}
             </ul>
+            {/* Confirm Button for Desktop */}
+            <button
+              type="button"
+              onClick={handleConfirm}
+              className="mt-4 text-white bg-pink-700 hover:bg-pink-800 font-medium rounded-lg text-sm px-5 py-2.5"
+            >
+              Confirm
+            </button>
+            {/* Show confirmed date and time on desktop */}
+            {confirmedDateTime && (
+              <p className="text-sm text-gray-900 mt-4">
+                <strong>Selected:</strong> {confirmedDateTime}
+              </p>
+            )}
           </div>
         </div>
       )}
