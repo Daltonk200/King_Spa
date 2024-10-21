@@ -1,4 +1,5 @@
 import { FaBox, FaCalendarAlt, FaSignOutAlt } from 'react-icons/fa';
+import Link from "next/link";
 
 const DashboardSidebar = () => {
   return (
@@ -28,7 +29,9 @@ const DashboardSidebar = () => {
         </nav>
       </div>
       <button className="flex items-center text-red-600 hover:text-red-800 mt-8">
-        <FaSignOutAlt className="mr-2" /> Log out
+      <Link href="/" className="flex items-center">
+        <FaSignOutAlt className="mr-2" /> Back to Home
+        </Link>
       </button>
     </div>
   );
