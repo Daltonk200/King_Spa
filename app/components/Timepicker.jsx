@@ -1,34 +1,67 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Datepicker } from "flowbite-react";
 import { useMediaQuery } from "react-responsive"; // Use media query for responsiveness
 import { useBooking } from "../context/BookingContext"; // Using your BookingContext
 
 export default function Timepicker() {
   // Get the context values from BookingContext
-  const { selectedDate, setSelectedDate, selectedTime, setSelectedTime } = useBooking();
+  const { selectedDate, setSelectedDate, selectedTime, setSelectedTime } =
+    useBooking();
   const [isOpen, setIsOpen] = useState(false);
   const [confirmedDateTime, setConfirmedDateTime] = useState("");
 
   const isMobile = useMediaQuery({ maxWidth: 640 }); // Mobile screen width
 
+  // Set initial value for selectedDate if it's null or undefined
+  useEffect(() => {
+    if (!selectedDate) {
+      setSelectedDate(new Date()); // Set current date as default if no date is selected
+    }
+  }, [selectedDate, setSelectedDate]);
+
+  // Debugging: Log the selectedDate and selectedTime when they change
+  useEffect(() => {
+    console.log("Selected Date: ", selectedDate);
+    console.log("Selected Time: ", selectedTime);
+  }, [selectedDate, selectedTime]);
+
   const handleConfirm = () => {
-    const appointmentDetails = `${selectedDate.toLocaleDateString()} at ${selectedTime}`;
-    setConfirmedDateTime(appointmentDetails); // Save confirmed details
-    setIsOpen(false); // Close modal on mobile
+    if (selectedDate && selectedTime) {
+      // Ensure selectedDate is converted to a string format
+      const formattedDate = selectedDate.toLocaleDateString(); // or use other formatting methods
+      const appointmentDetails = `${formattedDate} at ${selectedTime}`;
+      setConfirmedDateTime(appointmentDetails); // Save confirmed details
+      setIsOpen(false); // Close modal on mobile
+    } else {
+      alert("Please select both date and time.");
+    }
   };
 
   const handleDateChange = (date) => {
+    console.log("Date selected: ", date); // Debugging: Log selected date
     if (date >= new Date()) {
       setSelectedDate(date); // Only allow future dates
     }
   };
 
   const dummyServiceHours = [
-    "08:00 AM", "09:00 AM", "10:00 AM", "11:00 AM",
-    "12:00 PM", "01:00 PM", "02:00 PM", "03:00 PM",
-    "04:00 PM", "05:00 PM", "06:00 PM", "07:00 PM",
-    "08:00 PM", "09:00 PM", "10:00 PM", "11:00 PM"
+    "08:00 AM",
+    "09:00 AM",
+    "10:00 AM",
+    "11:00 AM",
+    "12:00 PM",
+    "01:00 PM",
+    "02:00 PM",
+    "03:00 PM",
+    "04:00 PM",
+    "05:00 PM",
+    "06:00 PM",
+    "07:00 PM",
+    "08:00 PM",
+    "09:00 PM",
+    "10:00 PM",
+    "11:00 PM",
   ];
 
   return (
@@ -39,7 +72,7 @@ export default function Timepicker() {
           <button
             type="button"
             onClick={() => setIsOpen(true)}
-            className="text-pink-500 bg-pink hover:bg-pink-100 border border-pink-200 focus:ring-4 focus:outline-none focus:ring-pink-100 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-pink-600 dark:bg-pink-700 dark:border-pink-600 dark:text-white dark:hover:bg-gray-700"
+            className="inline-flex items-center rounded-lg border border-pink-200 bg-pink px-5 py-2.5 text-center text-sm font-medium text-pink-500 hover:bg-pink-100 focus:outline-none focus:ring-4 focus:ring-pink-100 dark:border-pink-600 dark:bg-pink-700 dark:text-white dark:hover:bg-gray-700 dark:focus:ring-pink-600"
           >
             Schedule appointment
           </button>
@@ -48,20 +81,20 @@ export default function Timepicker() {
           {isOpen && (
             <div
               id="timepicker-modal"
-              className="fixed inset-0 z-50 flex justify-center items-center bg-black bg-opacity-50"
+              className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
             >
-              <div className="relative p-4 w-full max-w-[23rem] bg-white rounded-lg shadow dark:bg-gray-800">
-                <div className="flex items-center justify-between p-4 border-b rounded-t dark:border-gray-600">
+              <div className="relative w-full max-w-[23rem] rounded-lg bg-white p-4 shadow dark:bg-gray-800">
+                <div className="flex items-center justify-between rounded-t border-b p-4 dark:border-gray-600">
                   <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
                     Schedule an appointment
                   </h3>
                   <button
                     type="button"
                     onClick={() => setIsOpen(false)}
-                    className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm h-8 w-8 inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                    className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-transparent text-sm text-gray-400 hover:bg-gray-200 hover:text-gray-900 dark:hover:bg-gray-600 dark:hover:text-white"
                   >
                     <svg
-                      className="w-3 h-3"
+                      className="h-3 w-3"
                       aria-hidden="true"
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -79,8 +112,8 @@ export default function Timepicker() {
                   </button>
                 </div>
 
-                <div className="p-4 pt-0 bg-[aqua]">
-                  <div className="mx-auto sm:mx-0 flex justify-center my-5">
+                <div className="p-4 pt-0">
+                  <div className="mx-auto my-5 flex justify-center sm:mx-0">
                     <Datepicker
                       selected={selectedDate}
                       onChange={handleDateChange}
@@ -89,24 +122,24 @@ export default function Timepicker() {
                     />
                   </div>
 
-                  <label className="text-sm font-medium text-gray-900 dark:text-white mb-2 block">
+                  <label className="mb-2 block text-sm font-medium text-gray-900 dark:text-white">
                     Pick your time
                   </label>
 
-                  <ul className="grid w-full grid-cols-3 gap-2 mb-5">
+                  <ul className="mb-5 grid w-full grid-cols-3 gap-2">
                     {dummyServiceHours.map((time) => (
                       <li key={time}>
                         <input
                           type="radio"
                           id={time}
-                          className="hidden peer"
+                          className="peer hidden"
                           name="timetable"
                           value={time}
                           onChange={(e) => setSelectedTime(e.target.value)}
                         />
                         <label
                           htmlFor={time}
-                          className="inline-flex items-center justify-center w-full px-2 py-1 text-sm font-medium text-center hover:text-gray-900 dark:hover:text-white bg-white dark:bg-gray-800 border rounded-lg cursor-pointer text-gray-500 border-gray-200 dark:border-gray-700 peer-checked:border-pink-700 peer-checked:bg-pink-50 peer-checked:text-pink-700 hover:bg-gray-50 dark:hover:bg-gray-600 peer-checked:bg-pink-900"
+                          className="inline-flex w-full cursor-pointer items-center justify-center rounded-lg border border-gray-200 bg-white px-2 py-1 text-center text-sm font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-900 peer-checked:border-pink-700 peer-checked:bg-pink-50 peer-checked:text-pink-700 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-600 dark:hover:text-white"
                         >
                           {time}
                         </label>
@@ -118,14 +151,14 @@ export default function Timepicker() {
                     <button
                       type="button"
                       onClick={handleConfirm}
-                      className="text-white bg-pink-700 hover:bg-pink-800 font-medium rounded-lg text-sm px-5 py-2.5"
+                      className="rounded-lg bg-pink-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-pink-800"
                     >
                       Confirm
                     </button>
                     <button
                       type="button"
                       onClick={() => setIsOpen(false)}
-                      className="text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 font-medium rounded-lg text-sm px-5 py-2.5"
+                      className="rounded-lg border border-gray-300 bg-white px-5 py-2.5 text-sm font-medium text-gray-500 hover:bg-gray-100"
                     >
                       Cancel
                     </button>
@@ -137,14 +170,14 @@ export default function Timepicker() {
 
           {/* Show selected date and time on mobile after confirm */}
           {confirmedDateTime && (
-            <p className="text-sm text-gray-900 mt-4">
+            <p className="mt-4 text-sm text-gray-900">
               <strong>Selected:</strong> {confirmedDateTime}
             </p>
           )}
         </>
       ) : (
         // Desktop: Always visible
-        <div className="flex justify-between mb-6 w-[54.5rem]">
+        <div className="mb-6 flex w-[54.5rem] justify-between">
           <div className="w-1/3">
             <p className="font-bold">Pick a date</p>
             <Datepicker
@@ -162,14 +195,14 @@ export default function Timepicker() {
                   <input
                     type="radio"
                     id={time}
-                    className="hidden peer"
+                    className="peer hidden"
                     name="timetable"
                     value={time}
                     onChange={(e) => setSelectedTime(e.target.value)}
                   />
                   <label
                     htmlFor={time}
-                    className="inline-flex items-center justify-center w-full px-2 py-1 text-sm font-medium text-center hover:text-gray-900 dark:hover:text-white bg-white dark:bg-gray-800 border rounded-lg cursor-pointer text-gray-500 border-gray-200 dark:border-gray-700 peer-checked:border-pink-700 peer-checked:bg-pink-50 peer-checked:text-pink-700 hover:bg-gray-50 dark:hover:bg-gray-600 peer-checked:bg-pink-900"
+                    className="inline-flex w-full cursor-pointer items-center justify-center rounded-lg border border-gray-200 bg-white px-2 py-1 text-center text-sm font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-900 peer-checked:border-pink-700 peer-checked:bg-pink-50 peer-checked:text-pink-700 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-600 dark:hover:text-white"
                   >
                     {time}
                   </label>
@@ -180,13 +213,13 @@ export default function Timepicker() {
             <button
               type="button"
               onClick={handleConfirm}
-              className="mt-4 text-white bg-pink-700 hover:bg-pink-800 font-medium rounded-lg text-sm px-5 py-2.5"
+              className="mt-4 rounded-lg bg-pink-700 px-5 py-2.5 text-sm font-medium text-white hover:bg-pink-800"
             >
               Confirm
             </button>
             {/* Show confirmed date and time on desktop */}
             {confirmedDateTime && (
-              <p className="text-sm text-gray-900 mt-4">
+              <p className="mt-4 text-sm text-gray-900">
                 <strong>Selected:</strong> {confirmedDateTime}
               </p>
             )}

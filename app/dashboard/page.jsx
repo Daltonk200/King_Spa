@@ -1,71 +1,142 @@
-"use client"
-import React, { useState } from 'react';
-import DashboardSidebar from '../components/DashboardSidebar';
+"use client"; // Needed for fetching data in Next.js client-side
+import React, { useState, useEffect } from "react";
+import DashboardSidebar from "../components/DashboardSidebar";
+import { toast } from "sonner";
 
 const Dashboard = () => {
   const [expandedRow, setExpandedRow] = useState(null);
+  const [appointments, setAppointments] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  const data = [
-    { customer: 'Nabilah', email: 'mbengthelvis875@gmail.com', phone: '+237 683 39 97 09', services: ['Massage', 'Facial', 'Manicure'], date: '6 November 2022', time: '09:00 AM' },
-    { customer: 'Eka Tedja', email: 'mbengbessong25@gmail.com', phone: '+62-878-55...', services: ['Perawatan', 'Hair Spa'], date: '6 November 2022', time: '10:00 AM' },
-    { customer: 'Susila Su', email: 'mbengelvis05@gmail.com', phone: '+62-814-55...', services: ['Spa'], date: '27 September', time: '01:00 PM' },
-    { customer: 'Agus Ra', email: 'tabejudith87@gmail.com', phone: '+62-878-55...', services: ['Spa', 'Body Scrub'], date: '26 September', time: '03:00 PM' },
-    { customer: 'Sonny Ira', email: 'mbengbright3@mail.com', phone: '+62-878-55...', services: ['Massage', 'Therapy'], date: '26 September', time: '08:00 AM' },
-    { customer: 'Cahaya', email: 'Kingdeku207@gmail.com', phone: '+62-856-55...', services: ['Massage'], date: '25 September', time: '08:00 AM' },
-  ];
+  useEffect(() => {
+    // Fetch the appointments from the backend
+    const fetchAppointments = async () => {
+      try {
+        const res = await fetch("/api/appointments");
+        const data = await res.json();
+        setAppointments(data);
+      } catch (error) {
+        console.error("Failed to fetch appointments:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchAppointments();
+  }, []);
 
   const toggleRow = (index) => {
     setExpandedRow(expandedRow === index ? null : index);
   };
 
+  const handleDelete = async (id) => {
+    try {
+      const response = await fetch(`/api/appointments`, {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ id }),
+      });
+
+      if (response.ok) {
+        setAppointments((prev) =>
+          prev.filter((appointment) => appointment._id !== id),
+        );
+        toast.success("Appointment deleted")
+      } else {
+      }
+    } catch (error) {
+      console.error("Error deleting appointment:", error);
+    }
+  };
+
+  if (loading) {
+    return <p>Loading...</p>;
+  }
+
   return (
     <div className="flex">
       <DashboardSidebar />
-      <main className="flex-1 p-6 bg-gray-100">
-        <div className="bg-white rounded-lg shadow p-6">
-          <h2 className="text-xl font-semibold text-gray-800">Daftar Janji</h2>
-          <p className="text-gray-600 mb-4">
-            Sebagai administrator, Anda dapat melihat dan mengedit janji temu pelanggan jika perlu.
-            Akses ke area ini terbatas. Hanya admin yang dapat menggunakannya.
+      <main className="flex-1 bg-gray-100 p-6">
+        <div className="rounded-lg bg-white p-6 shadow">
+          <h2 className="text-xl font-semibold text-gray-800">
+            Appointments List
+          </h2>
+          <p className="mb-4 text-gray-600">
+            As an administrator, you can view and manage customer appointments.
+            Access to this area is restricted to admins.
           </p>
-          <table className="w-full text-left border-collapse">
+          <table className="w-full border-collapse text-left">
             <thead>
               <tr>
                 <th className="border-b p-2">Customer</th>
                 <th className="border-b p-2">Email</th>
-                <th className="border-b p-2">Nomor Telepon</th>
+                <th className="border-b p-2">Phone Number</th>
                 <th className="border-b p-2">Services</th>
-                <th className="border-b p-2">Tanggal dipesan</th>
-                <th className="border-b p-2">Waktu yang dipesan</th>
+                <th className="border-b p-2">Appointment Date</th>
+                <th className="border-b p-2">Appointment Time</th>
                 <th className="border-b p-2">Action</th>
               </tr>
             </thead>
             <tbody>
-              {data.map((item, index) => (
-                <React.Fragment key={index}>
-                  <tr
-                    className="hover:bg-gray-100 cursor-pointer"
-                    onClick={() => toggleRow(index)}
-                  >
-                    <td className="border-b p-2">{item.customer}</td>
-                    <td className="border-b p-2">{item.email}</td>
-                    <td className="border-b p-2">{item.phone}</td>
-                    <td className="border-b p-2">
-                      {item.services.length > 1 ? `${item.services[0]}, ...` : item.services[0]}
-                    </td>
-                    <td className="border-b p-2">{item.date}</td>
-                    <td className="border-b p-2">{item.time}</td>
-                    <td className="border-b p-2 text-pink-dark cursor-pointer">Lihat</td>
-                  </tr>
-                  {expandedRow === index && (
-                    <tr>
-                      <td colSpan="7" className="bg-pink-50 p-4">
-                        <strong>Services:</strong> {item.services.join(', ')}
+              {appointments.length > 0 ? (
+                appointments.map((item, index) => (
+                  <React.Fragment key={item._id}>
+                    <tr
+                      className="cursor-pointer hover:bg-gray-100"
+                      onClick={() => toggleRow(index)}
+                    >
+                      <td className="border-b p-2">{item.name}</td>
+                      <td className="border-b p-2">{item.email}</td>
+                      <td className="border-b p-2">{item.phone}</td>
+                      <td className="border-b p-2">
+                        {item.services.length > 1
+                          ? `${item.services[0]}, ...`
+                          : item.services[0]}
+                      </td>
+                      <td className="border-b p-2">
+                        {new Date(item.date).toLocaleDateString()}
+                      </td>
+                      <td className="border-b p-2">{item.time}</td>
+                      <td className="cursor-pointer border-b p-2">
+                        <button
+                          className="text-blue-500"
+                          onClick={(e) => {
+                            e.stopPropagation(); // Prevent row toggle
+                            console.log(item); // For debugging purposes
+                          }}
+                        >
+                          View
+                        </button>
+                        {" | "}
+                        <button
+                          className="text-red-500"
+                          onClick={(e) => {
+                            e.stopPropagation(); // Prevent row toggle
+                            handleDelete(item._id);
+                          }}
+                        >
+                          Done
+                        </button>
                       </td>
                     </tr>
-                  )}
-                </React.Fragment>
-              ))}
+                    {expandedRow === index && (
+                      <tr>
+                        <td colSpan="7" className="bg-gray-50 p-4">
+                          <strong>Services:</strong> {item.services.join(", ")}
+                        </td>
+                      </tr>
+                    )}
+                  </React.Fragment>
+                ))
+              ) : (
+                <tr>
+                  <td colSpan="7" className="p-4 text-center">
+                    No appointments available.
+                  </td>
+                </tr>
+              )}
             </tbody>
           </table>
         </div>
