@@ -7,7 +7,7 @@ const BeautySalon = () => {
     <div className="flex flex-col md:flex-row items-center p-8">
       <div className="flex-1">
         <img
-          src="/Images/image1_0.jpg" // Update with the path to your image
+          src="/Images/Black_man_cutting_hair.jpeg" // Update with the path to your image
           alt="Beauty Salon"
           className="w-full h-auto rounded-lg shadow-lg"
         />

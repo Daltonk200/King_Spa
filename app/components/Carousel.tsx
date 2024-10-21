@@ -27,8 +27,8 @@ export default function MyCarousel() {
       <Carousel  theme={customTheme} pauseOnHover>
 
         {/* Slide 1 */}
-        <div className="relative flex items-center justify-center h-full bg-[url('/Images/image1_0.jpg')] bg-cover">
-          <div className="absolute inset-0 bg-pink-100/70 flex flex-col items-center text-center justify-center">
+        <div className="relative flex items-center justify-center h-full bg-[url('/Images/Black_man_cutting_hair.jpeg')] bg-cover">
+          <div className="absolute inset-0 flex flex-col items-center text-center justify-center">
             <h2 className="text-4xl font-bold text-pink-800">BEAUTY MEANS</h2>
             <h1 className="text-5xl font-extrabold text-pink-600">HEALTHY YOU</h1>
             <p className="text-xl mt-4 text-gray-700">A little peace in a crazy world goes a long way.</p>
@@ -44,8 +44,8 @@ export default function MyCarousel() {
         </div>
 
         {/* Slide 2 */}
-        <div className="relative flex items-center justify-center h-full bg-[url('/Images/IMG-20240827-WA0004.jpg')] bg-cover">
-          <div className="absolute inset-0 bg-pink-100/70 flex flex-col items-center text-center justify-center">
+        <div className="relative flex items-center justify-center h-full bg-[url('/Images/massage_pro.jpeg')] bg-cover">
+          <div className="absolute inset-0  flex flex-col items-center text-center justify-center">
             <h2 className="text-4xl font-bold text-pink-800">REJUVENATE YOURSELF</h2>
             <h1 className="text-5xl font-extrabold text-pink-600">INNER PEACE</h1>
             <p className="text-xl mt-4 text-gray-700">Experience the tranquility you deserve.</p>
@@ -61,8 +61,8 @@ export default function MyCarousel() {
         </div>
 
         {/* Slide 3 */}
-        <div className="relative flex items-center justify-center h-full bg-[url('/Images/IMG-20240827-WA0006.jpg')] bg-cover">
-          <div className="absolute inset-0 bg-pink-100/70 flex flex-col items-center text-center justify-center">
+        <div className="relative flex items-center justify-center h-full bg-[url('/Images/Talking_in-spa.jpeg')] bg-cover">
+          <div className="absolute inset-0  flex flex-col items-center text-center justify-center">
             <h2 className="text-4xl font-bold text-pink-800">GLOW FROM WITHIN</h2>
             <h1 className="text-5xl font-extrabold text-pink-600">NATURAL BEAUTY</h1>
             <p className="text-xl mt-4 text-gray-700">Feel confident in your own skin.</p>
@@ -78,7 +78,7 @@ export default function MyCarousel() {
         </div>
 
         {/* Slide 4 */}
-        <div className="relative flex items-center justify-center h-full bg-[url('/Images/IMG-20240827-WA0008.jpg')] bg-cover">
+        <div className="relative flex items-center justify-center h-full bg-[url('/Images/Calabash-spa-and-salon-Afro-hair.jpg')] bg-cover">
           <div className="absolute inset-0 bg-pink-100/70 flex flex-col items-center text-center justify-center">
             <h2 className="text-4xl font-bold text-pink-800">SERENITY AWAITS</h2>
             <h1 className="text-5xl font-extrabold text-pink-600">RELAX & RECHARGE</h1>

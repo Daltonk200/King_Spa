@@ -1,13 +1,12 @@
 "use client"
-// import MyNavbar from "@/app/components/Navbar";
 import { DarkThemeToggle } from "flowbite-react";
 import MyCarousel from "./components/Carousel";
 import Gallery from "./components/Gallery";
-// import CategoryIcons from "./components/CategoryIcons";
 import BeautySalon from './components/BeautySalon';
 import Testimonials from "./components/Testimonials";
 import Footer from "./components/Footer";
 import ContactInfo from './components/ContactInfo';
+import Navbar from "@/app/components/Navbar";
 
 export default function Home() {
   const categories = [
@@ -20,27 +19,27 @@ export default function Home() {
 
   const galleryImages = [
     {
-      src: "/Images/IMG-20240827-WA0006.jpg",
+      src: "/Images/Calabash-spa-and-salon-Afro-hair.jpg",
       thumbnail: "/Images/image1_0.jpg",
       alt: "Gallery Image 1",
     },
     {
-      src: "/Images/image1_0.jpg",
+      src: "/Images/relaxing.jpeg",
       thumbnail: "/Images/image1_0.jpg",
       alt: "Gallery Image 2",
     },
     {
-      src: "/Images/IMG-20240827-WA0004.jpg",
+      src: "/Images/massage_pro.jpeg",
       thumbnail: "/Images/IMG-20240827-WA0006.jpg",
       alt: "Gallery Image 2",
     },
     {
-      src: "  /Images/IMG-20240827-WA0008.jpg",
+      src: "/Images/group_massage.jpeg",
       thumbnail: "/Images/image1_0.jpg",
       alt: "Gallery Image 2",
     },
     {
-      src: "/Images/image1_0.jpg",
+      src: "/Images/KIng_spa_salon.jpeg",
       thumbnail: "/Images/image1_0.jpg",
       alt: "Gallery Image 2",
     },
@@ -65,6 +64,7 @@ export default function Home() {
 
   return (
     <>
+    <Navbar/>
       <MyCarousel />
       <DarkThemeToggle />
       <main>
