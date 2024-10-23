@@ -1,5 +1,5 @@
 "use client"
-import { DarkThemeToggle } from "flowbite-react";
+// import { DarkThemeToggle } from "flowbite-react";
 import MyCarousel from "./components/Carousel";
 import Gallery from "./components/Gallery";
 import BeautySalon from './components/BeautySalon';
@@ -64,15 +64,9 @@ export default function Home() {
 
   return (
     <>
-    {/* <Navbar/> */}
+    <Navbar/>
       <MyCarousel />
-      <DarkThemeToggle />
       <main>
-        {/* <section className="bg-purple-100 p-6 text-center">
-        <h1 className="text-3xl md:text-5xl font-semibold">Find a service closer to you</h1>
-        <CategoryIcons icons={categories} />
-      </section> */}
-
         <section className="mx-auto my-16 max-w-6xl">
           <h2 className="mb-8 text-center text-4xl font-bold text-pink-500">
             Our Gallery

@@ -1,6 +1,7 @@
 "use client";
 import { Carousel } from "flowbite-react";
 import type { CustomFlowbiteTheme } from "flowbite-react";
+import Link from "next/link";
 
 const customTheme: CustomFlowbiteTheme["Carousel"] = {
   indicators: {
@@ -23,21 +24,25 @@ const customTheme: CustomFlowbiteTheme["Carousel"] = {
 
 export default function MyCarousel() {
   return (
-    <div className="h-96  sm:h-64 xl:h-80 2xl:h-96">
+    <div className="h-96  sm:h-64 xl:h-screen 2xl:h-screen">
       <Carousel  theme={customTheme} pauseOnHover>
 
         {/* Slide 1 */}
-        <div className="relative flex items-center justify-center h-full bg-[url('/Images/Black_man_cutting_hair.jpeg')] bg-cover">
-          <div className="absolute inset-0 flex flex-col items-center text-center justify-center">
-            <h2 className="text-4xl font-bold text-pink-800">BEAUTY MEANS</h2>
-            <h1 className="text-5xl font-extrabold text-pink-600">HEALTHY YOU</h1>
-            <p className="text-xl mt-4 text-gray-700">A little peace in a crazy world goes a long way.</p>
+        <div className="relative flex items-center justify-center h-full bg-[url('/Images/Boy_cutting_girls_hair.jpeg')] bg-cover">
+          <div className="absolute inset-0 flex flex-col items-center text-center justify-center ">
+            <h2 className="text-3xl lg:text-7xl font-bold text-pink-800">BEAUTY MEANS</h2>
+            <h1 className="text-4xl lg:text-8xl font-extrabold text-pink-600">HEALTHY YOU</h1>
+            <p className="text-2xl mt-4 text-gray-700">A little peace in a crazy world goes a long way.</p>
             <div className="mt-6">
               <button className="bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-6 rounded-full mx-2">
-                See All Services
+              <Link href="/services">
+               See All Services
+                </Link>
               </button>
               <button className="bg-gray-700 hover:bg-gray-800 text-white font-bold py-2 px-6 rounded-full mx-2">
-                More Detail
+                <Link href="/appointment">
+                Book Now
+                </Link>
               </button>
             </div>
           </div>
@@ -46,15 +51,19 @@ export default function MyCarousel() {
         {/* Slide 2 */}
         <div className="relative flex items-center justify-center h-full bg-[url('/Images/massage_pro.jpeg')] bg-cover">
           <div className="absolute inset-0  flex flex-col items-center text-center justify-center">
-            <h2 className="text-4xl font-bold text-pink-800">REJUVENATE YOURSELF</h2>
-            <h1 className="text-5xl font-extrabold text-pink-600">INNER PEACE</h1>
+            <h2 className="text-4xl lg:text-7xl font-bold text-pink-800">REJUVENATE YOURSELF</h2>
+            <h1 className="text-5xllg:text-8xl font-extrabold text-pink-600">INNER PEACE</h1>
             <p className="text-xl mt-4 text-gray-700">Experience the tranquility you deserve.</p>
             <div className="mt-6">
               <button className="bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-6 rounded-full mx-2">
+              <Link href="/services">
                 View Services
+              </Link>
               </button>
               <button className="bg-gray-700 hover:bg-gray-800 text-white font-bold py-2 px-6 rounded-full mx-2">
-                Learn More
+               <Link href="/appointment" >
+               Book Now
+               </Link>
               </button>
             </div>
           </div>
@@ -63,15 +72,19 @@ export default function MyCarousel() {
         {/* Slide 3 */}
         <div className="relative flex items-center justify-center h-full bg-[url('/Images/Talking_in-spa.jpeg')] bg-cover">
           <div className="absolute inset-0  flex flex-col items-center text-center justify-center">
-            <h2 className="text-4xl font-bold text-pink-800">GLOW FROM WITHIN</h2>
-            <h1 className="text-5xl font-extrabold text-pink-600">NATURAL BEAUTY</h1>
+            <h2 className="text-4xl lg:text-7xl font-bold text-pink-800">GLOW FROM WITHIN</h2>
+            <h1 className="text-5xl lg:text-8xl font-extrabold text-pink-600">NATURAL BEAUTY</h1>
             <p className="text-xl mt-4 text-gray-700">Feel confident in your own skin.</p>
             <div className="mt-6">
               <button className="bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-6 rounded-full mx-2">
+              <Link href="/services">
                 Discover More
+                </Link>
               </button>
               <button className="bg-gray-700 hover:bg-gray-800 text-white font-bold py-2 px-6 rounded-full mx-2">
+              <Link href="/appointment">
                 Book Now
+              </Link>
               </button>
             </div>
           </div>
@@ -79,16 +92,20 @@ export default function MyCarousel() {
 
         {/* Slide 4 */}
         <div className="relative flex items-center justify-center h-full bg-[url('/Images/Calabash-spa-and-salon-Afro-hair.jpg')] bg-cover">
-          <div className="absolute inset-0 bg-pink-100/70 flex flex-col items-center text-center justify-center">
-            <h2 className="text-4xl font-bold text-pink-800">SERENITY AWAITS</h2>
-            <h1 className="text-5xl font-extrabold text-pink-600">RELAX & RECHARGE</h1>
-            <p className="text-xl mt-4 text-gray-700">Find your balance and refresh your soul.</p>
+          <div className="absolute inset-0 flex flex-col items-center text-center justify-center ">
+            <h2 className="text-3xl lg:text-7xl font-bold text-pink-800">SERENITY AWAITS</h2>
+            <h1 className="text-4xl lg:text-8xl font-extrabold text-pink-600">RELAX & RECHARGE</h1>
+            <p className="lg:text-2xl mt-4 text-gray-700">Find your balance and refresh your soul.</p>
             <div className="mt-6">
               <button className="bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-6 rounded-full mx-2">
-                Explore More
+              <Link href="/appointment">
+                Book Now
+              </Link>
               </button>
               <button className="bg-gray-700 hover:bg-gray-800 text-white font-bold py-2 px-6 rounded-full mx-2">
+              <Link href="/contact">
                 Contact Us
+                </Link>
               </button>
             </div>
           </div>

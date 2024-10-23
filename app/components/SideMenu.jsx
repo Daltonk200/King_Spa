@@ -2,7 +2,7 @@ import React from 'react';
 
 const SideMenu = ({ services, activeService, onServiceChange }) => {
   return (
-    <div className="bg-pink-100 p-4 rounded-lg shadow-lg w-48">
+    <div className="bg-white p-4 rounded-lg shadow-lg w-48">
       <h2 className="text-xl font-bold text-pink-500 mb-4">Services</h2>
       <ul className="space-y-2">
         {services.map((service, index) => (

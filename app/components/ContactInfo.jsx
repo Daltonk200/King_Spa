@@ -1,13 +1,25 @@
 // components/ContactInfo.js
-
-import React from 'react';
+"use client"
+import React, { useEffect } from "react";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import { ClockIcon, PhoneIcon, MapPinIcon } from '@heroicons/react/24/solid';
+import Link from "next/link";
 
 const ContactInfo = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
+  }, []);
+
   return (
     <div className="grid md:grid-cols-2 gap-8 p-8">
       {/* Working Hours Section */}
-      <div className="flex flex-col items-start justify-center bg-slate-200 rounded-lg p-6">
+      <div className="flex flex-col items-start justify-center bg-slate-200 rounded-lg p-6"
+      data-aos="fade-right"
+      >
         <h2 className="text-3xl font-bold text-gray-800 mb-2">Working Hours</h2>
         <p className="text-gray-700 mb-4">
           Quis autem vel eum reprehenderit voluptate velit esse quam molestiae.
@@ -24,16 +36,18 @@ const ContactInfo = () => {
           <ClockIcon className="w-5 h-5 text-pink-500 mr-2" />
           <span>Sun: 9:00 am — 11:30 pm</span>
         </div>
-        <a
+        <Link
           href="/appointment"
           className="inline-block bg-pink-500 text-white font-semibold py-2 px-4 rounded shadow-lg hover:bg-pink-600 transition duration-300"
         >
           APPOINTMENT →
-        </a>
+        </Link>
       </div>
 
       {/* Contact Section */}
-      <div className="flex flex-col items-start justify-center">
+      <div className="flex flex-col items-start justify-center"
+      data-aos="fade-left"
+      >
         <h2 className="text-3xl font-bold text-gray-800 mb-2">Contact Us</h2>
         <p className="text-gray-700 mb-4">
           Quis autem vel eum reprehenderit voluptate velit esse quam molestiae.
@@ -46,6 +60,12 @@ const ContactInfo = () => {
           <PhoneIcon className="w-5 h-5 text-pink-500 mr-2" />
           <span>Call: +012 (345) 6789</span>
         </div>
+        <Link
+          href="/contact"
+          className="inline-block bg-pink-500 text-white font-semibold py-2 px-4 rounded shadow-lg hover:bg-pink-600 transition duration-300"
+        >
+          CONTACT US →
+        </Link>
       </div>
     </div>
   );

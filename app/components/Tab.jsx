@@ -12,7 +12,7 @@ const iconMapping = {
 
 const Tabs = ({ categories, activeCategory, onCategoryChange }) => {
   return (
-    <div className="flex overflow-x-auto space-x-4 bg-pink-100 p-3 rounded-lg shadow-md mb-6 scrollbar-hide">
+    <div className="flex overflow-x-auto space-x-4 bg-white p-3 rounded-lg shadow-md mb-6 scrollbar-hide">
       {categories.map((category) => (
         <button
           key={category}

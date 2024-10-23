@@ -64,9 +64,6 @@ export default function ServiceSelection({ nextStep }) {
           </div>
         ))}
       </div>
-      <button onClick={nextStep} className="bg-blue-500 text-white px-4 py-2 rounded-md">
-        Next
-      </button>
     </section>
   );
 }

@@ -5,6 +5,7 @@ import SideMenu from "../components/SideMenu";
 import ServiceCard from "../components/ServiceCard";
 import Footer from "../components/Footer";
 import OfferSection from "../components/OfferSection";
+import Navbar from "../components/Navbar";
 
 const servicesData = {
   SPA: [
@@ -112,13 +113,14 @@ export default function Services() {
 
   return (
     <>
-      <div className="container mx-auto p-6">
+    <Navbar/>
+      <div className="container mx-auto p-6 mt-20 ">
         <Tabs
           categories={Object.keys(servicesData)}
           activeCategory={activeCategory}
           onCategoryChange={handleCategoryChange}
         />
-        <div className="flex flex-col gap-6 lg:flex-row">
+        <div className="flex flex-col gap-6 lg:flex-row h-screen">
           <SideMenu
             services={servicesData[activeCategory]}
             activeService={activeService}

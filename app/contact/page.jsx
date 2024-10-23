@@ -1,7 +1,7 @@
 "use client"
 import React, { useEffect } from "react";
-import { DarkThemeToggle } from "flowbite-react";
 import Footer from "../components/Footer";
+import { EnvelopeIcon, PhoneIcon, MapPinIcon } from '@heroicons/react/24/solid';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -17,7 +17,6 @@ const Contact = () => {
   return (
     <>
       <section className="bg-white px-6 py-16 lg:px-12">
-        <DarkThemeToggle />
         <div className="mx-auto max-w-7xl">
           {/* Contact Detail Section */}
           <h2
@@ -33,20 +32,7 @@ const Contact = () => {
             {/* Phone */}
             <div className="rounded-lg border p-6 shadow-md">
               <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-pink-500 text-white">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-8 w-8"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M3 10l1.514 4.545A9 9 0 1014.545 3L10 4.514 3 10z"
-                  />
-                </svg>
+              <PhoneIcon className="w-5 h-5 " />
               </div>
               <h3 className="text-lg font-medium">Phone</h3>
               <p className="text-gray-500">+91 564 548 4854</p>
@@ -55,20 +41,7 @@ const Contact = () => {
             {/* Email */}
             <div className="rounded-lg border p-6 shadow-md">
               <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-pink-500 text-white">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-8 w-8"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M16 12H8m8 0H8m-8 0H4m8 0h8M4 4h16v16H4z"
-                  />
-                </svg>
+              <EnvelopeIcon className="w-5 h-5 " />
               </div>
               <h3 className="text-lg font-medium">Email</h3>
               <p className="text-gray-500">demo@gmail.com</p>
@@ -77,20 +50,7 @@ const Contact = () => {
             {/* Address */}
             <div className="rounded-lg border p-6 shadow-md">
               <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-pink-500 text-white">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-8 w-8"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M16 4.5A5.5 5.5 0 0111.5 10v0m0 6h0M16 4.5V3m-4.5 5.5H16M10 10V9M10 10h0v5.5"
-                  />
-                </svg>
+              <MapPinIcon className="w-5 h-5 " />
               </div>
               <h3 className="text-lg font-medium">Address</h3>
               <p className="text-gray-500">252 W 43rd St, New York, NY</p>

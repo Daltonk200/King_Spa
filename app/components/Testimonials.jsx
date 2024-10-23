@@ -1,16 +1,28 @@
+"use client"
+import React, { useEffect } from "react";
 import { Carousel } from 'flowbite-react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import Image from "next/image";
 
 const Testimonials = ({ testimonials }) => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
+  }, []);
+
   return (
     <div className="max-w-6xl mx-auto my-16">
       <h2 className="text-4xl text-center font-bold mb-8 text-pink-500">What People Say</h2>
       {testimonials.length > 0 ? (
-        <Carousel className="h-[300px]" >
+        <Carousel className="h-[300px]" data-aos="fade-up">
           {testimonials.map((testimonial, index) => (
             <div key={index} className="flex flex-col items-center justify-center p-8 bg-white rounded-lg shadow-lg min-h-[300px]">
               {/* Circular Image */}
               <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-pink-400">
-                <img src={testimonial.avatar} alt={testimonial.author} className="w-full h-full object-cover" />
+                <Image src={testimonial.avatar} alt={testimonial.author} className="w-full h-full object-cover" width={100} height={100}/>
               </div>
 
               {/* Testimonial Text */}
