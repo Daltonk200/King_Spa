@@ -18,6 +18,7 @@
     "aos": "^2.3.4",
     "cloudinary": "^2.5.1",
     "dotenv": "^16.4.5",
+    "flowbite": "^2.5.2",
     "flowbite-react": "^0.8.0",
     "glightbox": "^3.3.0",
     "mongoose": "^8.7.2",

@@ -1,10 +1,10 @@
 
 "use client";
-
+import type { CustomFlowbiteTheme } from "flowbite-react";
 import { Button, Timeline } from "flowbite-react";
 import { HiArrowNarrowRight, HiCalendar } from "react-icons/hi";
 
-const customTheme: CustomFlowbiteTheme["Timeline"] = {
+const customTheme: CustomFlowbiteTheme["timeline"] = {
     "root": {
       "direction": {
         "horizontal": "sm:flex",
@@ -17,11 +17,6 @@ const customTheme: CustomFlowbiteTheme["Timeline"] = {
         "vertical": "mb-10 ml-6"
       },
       "content": {
-        "root": {
-          "base": "",
-          "horizontal": "mt-3 sm:pr-8",
-          "vertical": ""
-        },
         "body": {
           "base": "mb-4 text-base font-normal text-gray-500 dark:text-gray-400"
         },

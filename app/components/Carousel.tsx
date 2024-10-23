@@ -3,7 +3,7 @@ import { Carousel } from "flowbite-react";
 import type { CustomFlowbiteTheme } from "flowbite-react";
 import Link from "next/link";
 
-const customTheme: CustomFlowbiteTheme["Carousel"] = {
+const customTheme: CustomFlowbiteTheme["carousel"] = {
   indicators: {
     active: {
       off: "bg-white/50 hover:bg-white dark:bg-gray-800/50 dark:hover:bg-gray-800 transition ease-in-out duration-300", // Lighter background, smooth hover transition
@@ -15,10 +15,7 @@ const customTheme: CustomFlowbiteTheme["Carousel"] = {
     // Larger size, smoother hover effect, and shadow for better visibility
     icon: "h-6 w-6 text-white dark:text-pink-500 sm:h-7 sm:w-7 transition-transform duration-300 group-hover:scale-110", // Slightly larger icon with hover scaling effect
   },
-  // Additional theme customizations if needed, like transitions or text
-  slide: {
-    base: "flex items-center justify-center h-full text-center bg-gray-200 dark:bg-gray-800 transition-all duration-500 ease-in-out", // Base style for slides, adding smooth transition for changes
-  },
+  
 };
 
 
