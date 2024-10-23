@@ -29,7 +29,7 @@ const BeautySalon = () => {
       </div>
       <div className="flex-1 md:pl-8">
         <h1 className="text-5xl font-bold text-pink-700 my-4">
-          KING'S SPA
+          KING&apos;S SPA
         </h1>
         <p className="text-gray-700 mb-6">
           Sed ut perspiciatis unde omnis iste natus error sit voluptatem

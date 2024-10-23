@@ -30,7 +30,7 @@ const OfferSection = () => {
 
       {/* Why It's Best Section */}
       <div className="md:w-1/2 bg-gray-50 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-        <h2 className="text-3xl font-bold text-pink-500 mb-4">WHY IT'S BEST?</h2>
+        <h2 className="text-3xl font-bold text-pink-500 mb-4">WHY IT&apos;S BEST?</h2>
         <div className="space-y-4 text-gray-700">
           <div className="flex items-center outline outline-3 outline-pink-400 p-2 rounded-lg">
             <span className='outline outline-3 outline-pink-500 rounded-full flex p-2 self-center ml-[-2rem] mr-2 z-10 bg-white'>

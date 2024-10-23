@@ -27,7 +27,7 @@ const Testimonials = ({ testimonials }) => {
 
               {/* Testimonial Text */}
               <div className="mt-4 text-center">
-                <p className="text-gray-600 text-lg italic">"{testimonial.text}"</p>
+                <p className="text-gray-600 text-lg italic">&quot;{testimonial.text}&quot;</p>
                 <h3 className="mt-4 font-semibold text-xl text-gray-900">{testimonial.author}</h3>
                 <p className="text-pink-400 font-medium">{testimonial.role}</p>
               </div>

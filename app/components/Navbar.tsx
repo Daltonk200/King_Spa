@@ -45,7 +45,7 @@ const Navbar = () => {
               className="w-[3.6rem] lg:w-[5rem]"
             />
             <span className="ml-2 self-center text-xl lg:text-2xl font-semibold text-pink-500">
-              King's Spa
+              King&apos;s Spa
             </span>
           </Link>
         </div>

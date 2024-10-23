@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 const Footer = () => {
@@ -8,12 +9,12 @@ const Footer = () => {
         <div>
           <h3 className="text-lg font-semibold mb-4">About</h3>
           <ul className="space-y-2 text-sm">
-            <li><a href="#" className="hover:underline">Success Story</a></li>
-            <li><a href="#" className="hover:underline">Latest Services</a></li>
-            <li><a href="#" className="hover:underline">Team Members</a></li>
-            <li><a href="#" className="hover:underline">Popular News</a></li>
-            <li><a href="#" className="hover:underline">Awards Winning</a></li>
-            <li><a href="#" className="hover:underline">About Company</a></li>
+            <li><Link href="#" className="hover:underline">Success Story</Link></li>
+            <li><Link href="#" className="hover:underline">Latest Services</Link></li>
+            <li><Link href="#" className="hover:underline">Team Members</Link></li>
+            <li><Link href="#" className="hover:underline">Popular News</Link></li>
+            <li><Link href="#" className="hover:underline">Awards Winning</Link></li>
+            <li><Link href="#" className="hover:underline">About Company</Link></li>
           </ul>
         </div>
 
@@ -21,12 +22,12 @@ const Footer = () => {
         <div>
           <h3 className="text-lg font-semibold mb-4">Services</h3>
           <ul className="space-y-2 text-sm">
-            <li><a href="#" className="hover:underline">Beauty Salon</a></li>
-            <li><a href="#" className="hover:underline">Hair Treatments</a></li>
-            <li><a href="#" className="hover:underline">Autumn Vibes</a></li>
-            <li><a href="#" className="hover:underline">Makeup</a></li>
-            <li><a href="#" className="hover:underline">Body Treatments</a></li>
-            <li><a href="#" className="hover:underline">Spa & Foot Massage</a></li>
+            <li><Link href="#" className="hover:underline">Beauty Salon</Link></li>
+            <li><Link href="#" className="hover:underline">Hair Treatments</Link></li>
+            <li><Link href="#" className="hover:underline">Autumn Vibes</Link></li>
+            <li><Link href="#" className="hover:underline">Makeup</Link></li>
+            <li><Link href="#" className="hover:underline">Body Treatments</Link></li>
+            <li><Link href="#" className="hover:underline">Spa & Foot Massage</Link></li>
           </ul>
         </div>
 
@@ -63,29 +64,29 @@ const Footer = () => {
             </button>
           </form>
           <div className="flex space-x-4 mt-4">
-            <a href="#" aria-label="Facebook">
+            <Link href="#" aria-label="Facebook">
               <i className="fab fa-facebook-f"></i>
-            </a>
-            <a href="#" aria-label="Twitter">
+            </Link>
+            <Link href="#" aria-label="Twitter">
               <i className="fab fa-twitter"></i>
-            </a>
-            <a href="#" aria-label="LinkedIn">
+            </Link>
+            <Link href="#" aria-label="LinkedIn">
               <i className="fab fa-linkedin-in"></i>
-            </a>
-            <a href="#" aria-label="YouTube">
+            </Link>
+            <Link href="#" aria-label="YouTube">
               <i className="fab fa-youtube"></i>
-            </a>
+            </Link>
           </div>
         </div>
       </div>
 
       <div className="mt-8 border-t border-gray-700 pt-4 text-center text-sm text-gray-400">
-        <p>&copy; 2024 King's Spa, All Rights Reserved</p>
+        <p>&copy; 2024 King&apos;s Spa, All Rights Reserved</p>
         <div className="flex justify-center space-x-6 mt-2">
-          <a href="#" className="hover:underline">Services</a>
-          <a href="#" className="hover:underline">FAQs</a>
-          <a href="/contact" className="hover:underline">My Account</a>
-          <a href="#" className="hover:underline">Privacy</a>
+          <Link href="#" className="hover:underline">Services</Link>
+          <Link href="#" className="hover:underline">FAQs</Link>
+          <Link href="/contact" className="hover:underline">My Account</Link>
+          <Link href="#" className="hover:underline">Privacy</Link>
         </div>
       </div>
     </footer>
