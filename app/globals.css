@@ -14,9 +14,6 @@
     break-inside: avoid;
   }
 
-
-
-
   @media (max-width: 768px) {
     .sidebar {
       order: 2;

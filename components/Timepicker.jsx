@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { Datepicker } from "flowbite-react";
 import { useMediaQuery } from "react-responsive"; // Use media query for responsiveness
-import { useBooking } from "../context/BookingContext"; // Using your BookingContext
+import { useBooking } from "../app/context/BookingContext"; // Using your BookingContext
 
 export default function Timepicker() {
   // Get the context values from BookingContext
@@ -81,7 +81,7 @@ export default function Timepicker() {
           {isOpen && (
             <div
               id="timepicker-modal"
-              className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
+              className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 "
             >
               <div className="relative w-full max-w-[23rem] rounded-lg bg-white p-4 shadow dark:bg-gray-800">
                 <div className="flex items-center justify-between rounded-t border-b p-4 dark:border-gray-600">
@@ -91,10 +91,10 @@ export default function Timepicker() {
                   <button
                     type="button"
                     onClick={() => setIsOpen(false)}
-                    className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-transparent text-sm text-gray-400 hover:bg-gray-200 hover:text-gray-900 dark:hover:bg-gray-600 dark:hover:text-white"
+                    className="inline-flex size-8 items-center justify-center rounded-lg bg-transparent text-sm text-gray-400 hover:bg-gray-200 hover:text-gray-900 dark:hover:bg-gray-600 dark:hover:text-white"
                   >
                     <svg
-                      className="h-3 w-3"
+                      className="size-3"
                       aria-hidden="true"
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"

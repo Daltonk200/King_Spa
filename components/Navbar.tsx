@@ -20,29 +20,34 @@ const Navbar = () => {
         setScrolled(false);
       }
     };
-
-    window.addEventListener("scroll", handleScroll);
-
+  
+    // Check if window is defined (only runs in the browser)
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", handleScroll);
+    }
+  
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      if (typeof window !== "undefined") {
+        window.removeEventListener("scroll", handleScroll);
+      }
     };
   }, []);
-
+  
   return (
     <header>
       <nav
-        className={`fixed top-0 left-0 right-0 z-20 transition-all duration-300 ${
+        className={`fixed top-0 inset-x-0 z-20 transition-all duration-300 ${
           scrolled ? "bg-black/70 backdrop-blur-md" : "bg-transparent"
         } flex items-center justify-between lg:px-8 p-6 h-20`}
       >
-        <div className="flex lg:flex-1 ml-[-2rem]">
+        <div className="flex lg:flex-1 -ml-8">
           <Link href="/" className="flex items-center">
             <Image
               src="/Images/King_spa_logo-removebg-preview.png"
               width={100}
               height={30}
               alt="Logo"
-              className="w-[3.6rem] lg:w-[5rem]"
+              className="w-[3.6rem] lg:w-20"
             />
             <span className="ml-2 self-center text-xl lg:text-2xl font-semibold text-pink-500">
               King&apos;s Spa

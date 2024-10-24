@@ -1,5 +1,7 @@
-import Link from 'next/link';
 import React from 'react';
+import Link from 'next/link';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faWhatsapp,faFacebook, faLinkedin, faYoutube } from '@fortawesome/free-brands-svg-icons';
 
 const Footer = () => {
   return (
@@ -65,16 +67,16 @@ const Footer = () => {
           </form>
           <div className="flex space-x-4 mt-4">
             <Link href="#" aria-label="Facebook">
-              <i className="fab fa-facebook-f"></i>
+            <FontAwesomeIcon icon={faFacebook} />
             </Link>
-            <Link href="#" aria-label="Twitter">
-              <i className="fab fa-twitter"></i>
+            <Link href="#" aria-label="Whatapp">
+            <FontAwesomeIcon icon={faWhatsapp} />
             </Link>
             <Link href="#" aria-label="LinkedIn">
-              <i className="fab fa-linkedin-in"></i>
+            <FontAwesomeIcon icon={faLinkedin} />
             </Link>
             <Link href="#" aria-label="YouTube">
-              <i className="fab fa-youtube"></i>
+            <FontAwesomeIcon icon={faYoutube} />
             </Link>
           </div>
         </div>

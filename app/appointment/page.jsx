@@ -3,9 +3,9 @@
 import { useState } from "react";
 import { Timeline, Button } from "flowbite-react";
 import { HiCalendar } from "react-icons/hi";
-import ServiceSelection from "../components/ServiceSelection";
-import DateSelection from "../components/DateSelection";
-import Confirmation from "../components/Confirmation";
+import ServiceSelection from "../../components/ServiceSelection";
+import DateSelection from "../../components/DateSelection";
+import Confirmation from "../../components/Confirmation";
 
 // Custom theme without TypeScript typing
 const customTheme = {
@@ -71,14 +71,19 @@ export default function Appointment() {
   };
 
   return (
-    <div className="container mx-auto p-4  h-screen">
-      <div className="py-4 mb-6 border-b-2 border-gray-200">
+    <div className="container mx-auto h-screen  p-4">
+      <div className="mb-6 border-b-2 border-gray-200 py-4">
         <Timeline theme={customTheme} horizontal>
           {steps.map((step, index) => (
             <Timeline.Item key={index}>
-              <Timeline.Point icon={HiCalendar} className={`${currentStep === index ? "text-pink-400" : ""} `}/>
+              <Timeline.Point
+                icon={HiCalendar}
+                className={`${currentStep === index ? "text-pink-400" : ""} `}
+              />
               <Timeline.Content>
-                <Timeline.Title className={`${currentStep === index ? "text-pink-400" : ""} pt-2 px-5`}>
+                <Timeline.Title
+                  className={`${currentStep === index ? "text-pink-400" : ""} px-5 pt-2`}
+                >
                   {step}
                 </Timeline.Title>
               </Timeline.Content>
@@ -91,11 +96,15 @@ export default function Appointment() {
       {currentStep === 1 && <DateSelection />}
       {currentStep === 2 && <Confirmation />}
 
-      <div className="flex justify-between mt-4">
+      <div className="mt-4 flex justify-between">
         <Button color="pink" onClick={prevStep} disabled={currentStep === 0}>
           Back
         </Button>
-        <Button color="pink" onClick={nextStep} disabled={currentStep === steps.length - 1}>
+        <Button
+          color="pink"
+          onClick={nextStep}
+          disabled={currentStep === steps.length - 1}
+        >
           Next
         </Button>
       </div>

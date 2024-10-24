@@ -25,15 +25,15 @@ const ContactInfo = () => {
           Quis autem vel eum reprehenderit voluptate velit esse quam molestiae.
         </p>
         <div className="flex items-center text-gray-700 mb-2">
-          <ClockIcon className="w-5 h-5 text-pink-500 mr-2" />
+          <ClockIcon className="size-5 text-pink-500 mr-2" />
           <span>Mon to Fri: 7:30 am — 1:00 am</span>
         </div>
         <div className="flex items-center text-gray-700 mb-2">
-          <ClockIcon className="w-5 h-5 text-pink-500 mr-2" />
+          <ClockIcon className="size-5 text-pink-500 mr-2" />
           <span>Sat: 9:00 am — 1:00 am</span>
         </div>
         <div className="flex items-center text-gray-700 mb-4">
-          <ClockIcon className="w-5 h-5 text-pink-500 mr-2" />
+          <ClockIcon className="size-5 text-pink-500 mr-2" />
           <span>Sun: 9:00 am — 11:30 pm</span>
         </div>
         <Link
@@ -53,11 +53,11 @@ const ContactInfo = () => {
           Quis autem vel eum reprehenderit voluptate velit esse quam molestiae.
         </p>
         <div className="flex items-center text-gray-700 mb-2">
-          <MapPinIcon className="w-5 h-5 text-pink-500 mr-2" />
+          <MapPinIcon className="size-5 text-pink-500 mr-2" />
           <span>523 Main Street, 2nd Floor, New York City</span>
         </div>
         <div className="flex items-center text-gray-700 mb-4">
-          <PhoneIcon className="w-5 h-5 text-pink-500 mr-2" />
+          <PhoneIcon className="size-5 text-pink-500 mr-2" />
           <span>Call: +012 (345) 6789</span>
         </div>
         <Link

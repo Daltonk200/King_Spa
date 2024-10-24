@@ -1,15 +1,18 @@
 import { FaBox, FaCalendarAlt, FaSignOutAlt } from 'react-icons/fa';
 import Link from "next/link";
+import Image from 'next/image';
 
 const DashboardSidebar = () => {
   return (
     <div className="bg-pink-light min-h-screen p-4 w-64 flex flex-col justify-between">
       <div>
         <div className="flex items-center mb-8">
-          <img
+          <Image
             src="/profile-pic-placeholder.png"
             alt="Profile"
-            className="w-12 h-12 rounded-full mr-3"
+            width={100}
+            height={100}
+            className="size-12 rounded-full mr-3"
           />
           <div>
             <p className="text-gray-800 font-semibold">Bless B</p>

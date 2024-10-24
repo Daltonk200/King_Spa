@@ -60,7 +60,7 @@ export function MyTimeline() {
           </Timeline.Body>
           <Button color="gray">
             Learn More
-            <HiArrowNarrowRight className="ml-2 h-3 w-3" />
+            <HiArrowNarrowRight className="ml-2 size-3" />
           </Button>
         </Timeline.Content>
       </Timeline.Item>

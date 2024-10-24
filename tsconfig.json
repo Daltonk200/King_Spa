@@ -21,6 +21,15 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/components/Gallery.jsx", "app/components/Testimonials.jsx", "app/components/Timeline.sx", "app/layout.jsx"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "components/Gallery.jsx",
+    "components/Testimonials.jsx",
+    "components/Timeline.sx",
+    "app/layout.jsx"
+  ],
   "exclude": ["node_modules"]
 }

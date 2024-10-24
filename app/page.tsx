@@ -1,21 +1,15 @@
 "use client"
 // import { DarkThemeToggle } from "flowbite-react";
-import MyCarousel from "./components/Carousel";
-import Gallery from "./components/Gallery";
-import BeautySalon from './components/BeautySalon';
-import Testimonials from "./components/Testimonials";
-import Footer from "./components/Footer";
-import ContactInfo from './components/ContactInfo';
-import Navbar from "@/app/components/Navbar";
+import MyCarousel from "../components/Carousel";
+import Gallery from "../components/Gallery";
+import BeautySalon from '../components/BeautySalon';
+import Testimonials from "../components/Testimonials";
+import Footer from "../components/Footer";
+import ContactInfo from '../components/ContactInfo';
+import Navbar from "@/components/Navbar";
 
 export default function Home() {
-  const categories = [
-    { src: "/icons/haircut.svg", alt: "Haircut" },
-    { src: "/icons/massage.svg", alt: "Massage" },
-    { src: "/icons/facial.svg", alt: "Facial" },
-    { src: "/icons/nails.svg", alt: "Nails" },
-    // Add more categories as needed
-  ];
+  
 
   const galleryImages = [
     {

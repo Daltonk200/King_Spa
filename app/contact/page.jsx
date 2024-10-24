@@ -1,9 +1,9 @@
-"use client"
+"use client";
 import React, { useEffect } from "react";
-import Footer from "../components/Footer";
-import { EnvelopeIcon, PhoneIcon, MapPinIcon } from '@heroicons/react/24/solid';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import Footer from "../../components/Footer";
+import { EnvelopeIcon, PhoneIcon, MapPinIcon } from "@heroicons/react/24/solid";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Contact = () => {
   // Initialize AOS inside useEffect
@@ -31,8 +31,8 @@ const Contact = () => {
           >
             {/* Phone */}
             <div className="rounded-lg border p-6 shadow-md">
-              <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-pink-500 text-white">
-              <PhoneIcon className="w-5 h-5 " />
+              <div className="mx-auto mb-4 flex size-16 items-center justify-center rounded-full bg-pink-500 text-white">
+                <PhoneIcon className="size-5 " />
               </div>
               <h3 className="text-lg font-medium">Phone</h3>
               <p className="text-gray-500">+91 564 548 4854</p>
@@ -40,8 +40,8 @@ const Contact = () => {
 
             {/* Email */}
             <div className="rounded-lg border p-6 shadow-md">
-              <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-pink-500 text-white">
-              <EnvelopeIcon className="w-5 h-5 " />
+              <div className="mx-auto mb-4 flex size-16 items-center justify-center rounded-full bg-pink-500 text-white">
+                <EnvelopeIcon className="size-5 " />
               </div>
               <h3 className="text-lg font-medium">Email</h3>
               <p className="text-gray-500">demo@gmail.com</p>
@@ -49,8 +49,8 @@ const Contact = () => {
 
             {/* Address */}
             <div className="rounded-lg border p-6 shadow-md">
-              <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-pink-500 text-white">
-              <MapPinIcon className="w-5 h-5 " />
+              <div className="mx-auto mb-4 flex size-16 items-center justify-center rounded-full bg-pink-500 text-white">
+                <MapPinIcon className="size-5 " />
               </div>
               <h3 className="text-lg font-medium">Address</h3>
               <p className="text-gray-500">252 W 43rd St, New York, NY</p>

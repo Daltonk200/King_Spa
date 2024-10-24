@@ -21,8 +21,8 @@ const Testimonials = ({ testimonials }) => {
           {testimonials.map((testimonial, index) => (
             <div key={index} className="flex flex-col items-center justify-center p-8 bg-white rounded-lg shadow-lg min-h-[300px]">
               {/* Circular Image */}
-              <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-pink-400">
-                <Image src={testimonial.avatar} alt={testimonial.author} className="w-full h-full object-cover" width={100} height={100}/>
+              <div className="size-24 rounded-full overflow-hidden border-4 border-pink-400">
+                <Image src={testimonial.avatar} alt={testimonial.author} className="size-full object-cover" width={100} height={100}/>
               </div>
 
               {/* Testimonial Text */}

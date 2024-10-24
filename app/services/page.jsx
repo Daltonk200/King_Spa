@@ -1,11 +1,11 @@
 "use client";
 import { useState } from "react";
-import Tabs from "../components/Tab";
-import SideMenu from "../components/SideMenu";
-import ServiceCard from "../components/ServiceCard";
-import Footer from "../components/Footer";
-import OfferSection from "../components/OfferSection";
-import Navbar from "../components/Navbar";
+import Tabs from "../../components/Tab";
+import SideMenu from "../../components/SideMenu";
+import ServiceCard from "../../components/ServiceCard";
+import Footer from "../../components/Footer";
+import OfferSection from "../../components/OfferSection";
+import Navbar from "../../components/Navbar";
 
 const servicesData = {
   SPA: [
@@ -113,14 +113,14 @@ export default function Services() {
 
   return (
     <>
-    <Navbar/>
-      <div className="container mx-auto p-6 mt-20 ">
+      <Navbar />
+      <div className="container mx-auto mt-20 p-6 ">
         <Tabs
           categories={Object.keys(servicesData)}
           activeCategory={activeCategory}
           onCategoryChange={handleCategoryChange}
         />
-        <div className="flex flex-col gap-6 lg:flex-row h-screen">
+        <div className="flex h-screen flex-col gap-6 lg:flex-row">
           <SideMenu
             services={servicesData[activeCategory]}
             activeService={activeService}
