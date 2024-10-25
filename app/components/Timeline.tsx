@@ -18,11 +18,7 @@ const customTheme: CustomFlowbiteTheme["timeline"] = {
         "vertical": "mb-10 ml-6"
       },
       "content": {
-        "root": {
-          "base": "",
-          "horizontal": "mt-3 sm:pr-8",
-          "vertical": ""
-        },
+        
         "body": {
           "base": "mb-4 text-base font-normal text-gray-500 dark:text-gray-400"
         },
