@@ -11,7 +11,7 @@ import Confirmation from "../components/Confirmation";
 const customTheme = {
   root: {
     direction: {
-      horizontal: "sm:flex w-full", // Ensure the timeline stretches horizontally across the container
+      horizontal: "sm:flex w-full", // Ensure the timeline stretches horizontally across the containe
       vertical: "relative border-l border-gray-200 dark:border-gray-700",
     },
   },
