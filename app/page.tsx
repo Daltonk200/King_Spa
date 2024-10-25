@@ -5,7 +5,7 @@ import BeautySalon from './components/BeautySalon';
 import Testimonials from "./components/Testimonials";
 import Footer from "./components/Footer";
 import ContactInfo from './components/ContactInfo';
-import Navbar from "@/app/components/Navbar";
+// import Navbar from "@/app/components/Navbar";
 
 export default function Home() {
 
@@ -56,7 +56,7 @@ export default function Home() {
 
   return (
     <>
-    <Navbar/>
+    {/* <Navbar/> */}
       <MyCarousel />
       <main>
         <section className="mx-auto my-16 max-w-6xl">
