@@ -1,11 +1,20 @@
 "use client"
-import MyCarousel from "./components/Carousel";
+import dynamic from 'next/dynamic';  
+const MyCarousel = dynamic(() => import('./components/Carousel'), {  
+    ssr: false, // Disable server-side rendering for this component  
+});
+
+const Testimonials = dynamic(() => import('./components/Testimonials'), {  
+    ssr: false, // Disable server-side rendering for this component  
+});
+// import Testimonials from "./components/Testimonials";
+
 import Gallery from "./components/Gallery";
 import BeautySalon from './components/BeautySalon';
-import Testimonials from "./components/Testimonials";
 import Footer from "./components/Footer";
 import ContactInfo from './components/ContactInfo';
-// import Navbar from "@/app/components/Navbar";
+import Navbar from "@/app/components/Navbar";
+
 
 export default function Home() {
 
@@ -56,7 +65,7 @@ export default function Home() {
 
   return (
     <>
-    {/* <Navbar/> */}
+    <Navbar/>
       <MyCarousel />
       <main>
         <section className="mx-auto my-16 max-w-6xl">
