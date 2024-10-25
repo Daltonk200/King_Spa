@@ -36,7 +36,7 @@
     "app/components/Gallery.jsx",
     "app/components/Testimonials.jsx",
     "app/components/Timeline.sx"
-, "app/layout.jsx", "app/page.jsx"  ],
+, "app/layout.jsx", "app/page.tsx"  ],
   "exclude": [
     "node_modules"
   ]
