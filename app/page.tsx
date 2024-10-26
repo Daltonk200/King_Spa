@@ -9,11 +9,19 @@ const Testimonials = dynamic(() => import('./components/Testimonials'), {
 });
 // import Testimonials from "./components/Testimonials";
 
-import Gallery from "./components/Gallery";
+const Gallery = dynamic(() => import('./components/Gallery'), {  
+    ssr: false, // Disable server-side rendering for this component  
+});
+// import Gallery from "./components/Gallery";
+
+
+const Navbar = dynamic(() => import('@/app/components/Navbar'), {  
+    ssr: false, // Disable server-side rendering for this component  
+});
+// import Navbar from "@/app/components/Navbar";
 import BeautySalon from './components/BeautySalon';
 import Footer from "./components/Footer";
 import ContactInfo from './components/ContactInfo';
-import Navbar from "@/app/components/Navbar";
 
 
 export default function Home() {
