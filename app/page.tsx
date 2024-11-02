@@ -22,9 +22,27 @@ const Navbar = dynamic(() => import('@/app/components/Navbar'), {
 import BeautySalon from './components/BeautySalon';
 import Footer from "./components/Footer";
 import ContactInfo from './components/ContactInfo';
+import { useState } from 'react';
+import { BsWhatsapp } from 'react-icons/bs';
+
 
 
 export default function Home() {
+
+  const whatsappNumber = '+237650318856';
+  const defaultMessage = 'Hello, I would like to learn more about your services.'; 
+
+ // Animation state (optional)
+ const [isHovered, setIsHovered] = useState(false);
+
+ // WhatsApp click handler
+ const openWhatsAppChat = () => {
+   const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(defaultMessage)}`;
+   window.open(url, '_blank');
+   console.log(encodeURIComponent(defaultMessage));
+   
+ };
+
 
   const galleryImages = [
     {
@@ -98,6 +116,17 @@ export default function Home() {
         </section>
       </main>
       <Footer />
+      <div
+        className={`fixed bottom-4 right-4 p-3 bg-green-500 text-white rounded-full cursor-pointer transition-transform ${
+          isHovered ? 'animate-pulse' : ''
+        }`}
+        style={{ fontSize: '3rem' }}
+        onClick={openWhatsAppChat}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+      >
+        <BsWhatsapp size={48} />
+      </div>
     </>
   );
 }

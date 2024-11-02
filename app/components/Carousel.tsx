@@ -22,86 +22,102 @@ export default function MyCarousel() {
   return (
     <div className="h-96  sm:h-64 xl:h-screen 2xl:h-screen">
       <Carousel  theme={customTheme} pauseOnHover>
-
         {/* Slide 1 */}
-        <div className="relative flex items-center justify-center h-full bg-[url('/Images/Boy_cutting_girls_hair.jpeg')] bg-cover">
-          <div className="absolute inset-0 flex flex-col items-center text-center justify-center ">
-            <h2 className="text-3xl lg:text-7xl font-bold text-pink-800">BEAUTY MEANS</h2>
-            <h1 className="text-4xl lg:text-8xl font-extrabold text-pink-600">HEALTHY YOU</h1>
-            <p className="text-2xl mt-4 text-gray-700">A little peace in a crazy world goes a long way.</p>
-            <div className="mt-6">
-              <button className="bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-6 rounded-full mx-2">
+        <div className="relative flex h-full items-center justify-center bg-[url('/Images/Calabash-spa-and-salon-Afro-hair.jpg')] bg-cover">
+        <div className="w-full h-screen absolute bg-black/50"></div>
+          <div className="absolute inset-0 flex flex-col items-center justify-center text-center ">
+            <h2 className="text-3xl font-bold text-white  text-textShadow-default lg:text-7xl">
+              BEAUTY MEANS
+            </h2>
+            <h1 className="text-4xl font-extrabold text-white text-textShadow-lg lg:text-8xl">
+              HEALTHY YOU
+            </h1>
+            <p className="mt-4 text-2xl text-pink-500 text-textShadow-md">
+              A little peace in a crazy world goes a long way.
+            </p>
+
+            <div className="mt-6 flex gap-4">
               <Link href="/services">
-               See All Services
-                </Link>
-              </button>
-              <button className="bg-gray-700 hover:bg-gray-800 text-white font-bold py-2 px-6 rounded-full mx-2">
-                <Link href="/appointment">
-                Book Now
-                </Link>
-              </button>
+                <button className="transform rounded-full bg-gradient-to-r from-pink-600 to-pink-400 px-6 py-2 font-bold text-white shadow-lg transition duration-300 ease-in-out hover:scale-105 hover:from-pink-400 hover:to-pink-600">
+                  See All Services
+                </button>
+              </Link>
+              <Link href="/appointment">
+                <button className="transform rounded-full border  bg-white px-6 py-2 font-bold text-pink-600 shadow-lg transition duration-300 ease-in-out hover:scale-105 hover:bg-pink-500 hover:text-white">
+                  Book Now
+                </button>
+              </Link>
             </div>
           </div>
         </div>
 
         {/* Slide 2 */}
-        <div className="relative flex items-center justify-center h-full bg-[url('/Images/massage_pro.jpeg')] bg-cover">
-          <div className="absolute inset-0  flex flex-col items-center text-center justify-center">
-            <h2 className="text-4xl lg:text-7xl font-bold text-pink-800">REJUVENATE YOURSELF</h2>
-            <h1 className="text-5xllg:text-8xl font-extrabold text-pink-600">INNER PEACE</h1>
-            <p className="text-xl mt-4 text-gray-700">Experience the tranquility you deserve.</p>
+        <div className="relative flex h-full items-center justify-center bg-[url('/Images/Speke-Apartments-Wampewo-Calabash-Spa-Salon-Beauty-slider_img-12.jpg')] bg-cover">
+          <div className="w-full h-screen absolute bg-black/50"></div>
+          <div className="absolute inset-0  flex flex-col items-center justify-center text-center">
+            <h2 className="text-4xl font-bold text-white  lg:text-7xl">
+              REJUVENATE YOURSELF
+            </h2>
+            <h1 className="text-5xl lg:text-8xl font-extrabold text-white">
+              INNER PEACE
+            </h1>
+            <p className="mt-4 text-2xl text-pink-500">
+              Experience the tranquility you deserve.
+            </p>
             <div className="mt-6">
-              <button className="bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-6 rounded-full mx-2">
-              <Link href="/services">
-                View Services
-              </Link>
+              <button className="mx-2 rounded-full bg-pink-500 px-6 py-2 font-bold text-white hover:bg-pink-600">
+                <Link href="/services">View Services</Link>
               </button>
-              <button className="bg-gray-700 hover:bg-gray-800 text-white font-bold py-2 px-6 rounded-full mx-2">
-               <Link href="/appointment" >
-               Book Now
-               </Link>
+              <button className="mx-2 rounded-full bg-gray-700 px-6 py-2 font-bold text-white hover:bg-gray-800">
+                <Link href="/appointment">Book Now</Link>
               </button>
             </div>
           </div>
         </div>
 
         {/* Slide 3 */}
-        <div className="relative flex items-center justify-center h-full bg-[url('/Images/Talking_in-spa.jpeg')] bg-cover">
-          <div className="absolute inset-0  flex flex-col items-center text-center justify-center">
-            <h2 className="text-4xl lg:text-7xl font-bold text-pink-800">GLOW FROM WITHIN</h2>
-            <h1 className="text-5xl lg:text-8xl font-extrabold text-pink-600">NATURAL BEAUTY</h1>
-            <p className="text-xl mt-4 text-gray-700">Feel confident in your own skin.</p>
+        <div className="relative flex h-full items-center justify-center bg-[url('/Images/Speke-Apartments-Wampewo-Calabash-Spa-Salon-Beauty-slider_img-11.jpg')] bg-cover">
+          <div className="w-full h-screen absolute bg-black/50"></div>
+          <div className="absolute inset-0  flex flex-col items-center justify-center text-center">
+            <h2 className="text-4xl font-bold text-white  lg:text-7xl">
+              GLOW FROM WITHIN
+            </h2>
+            <h1 className="text-5xl font-extrabold text-white lg:text-8xl">
+              NATURAL BEAUTY
+            </h1>
+            <p className="mt-4 text-2xl text-pink-500">
+              Feel confident in your own skin.
+            </p>
             <div className="mt-6">
-              <button className="bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-6 rounded-full mx-2">
-              <Link href="/services">
-                Discover More
-                </Link>
+              <button className="mx-2 rounded-full bg-pink-500 px-6 py-2 font-bold text-white hover:bg-pink-600">
+                <Link href="/services">Discover More</Link>
               </button>
-              <button className="bg-gray-700 hover:bg-gray-800 text-white font-bold py-2 px-6 rounded-full mx-2">
-              <Link href="/appointment">
-                Book Now
-              </Link>
+              <button className="mx-2 rounded-full bg-gray-700 px-6 py-2 font-bold text-white hover:bg-gray-800">
+                <Link href="/appointment">Book Now</Link>
               </button>
             </div>
           </div>
         </div>
 
         {/* Slide 4 */}
-        <div className="relative flex items-center justify-center h-full bg-[url('/Images/Calabash-spa-and-salon-Afro-hair.jpg')] bg-cover">
-          <div className="absolute inset-0 flex flex-col items-center text-center justify-center ">
-            <h2 className="text-3xl lg:text-7xl font-bold text-pink-800">SERENITY AWAITS</h2>
-            <h1 className="text-4xl lg:text-8xl font-extrabold text-pink-600">RELAX & RECHARGE</h1>
-            <p className="lg:text-2xl mt-4 text-gray-700">Find your balance and refresh your soul.</p>
+        <div className="relative flex h-full items-center justify-center bg-[url('/Images/calabash-spa-girlfriend-treatment.jpg')] bg-cover">
+          <div className="w-full h-screen absolute bg-black/50"></div>
+          <div className="absolute inset-0 flex flex-col items-center justify-center text-center ">
+            <h2 className="text-3xl font-bold text-white  lg:text-7xl">
+              SERENITY AWAITS
+            </h2>
+            <h1 className="text-4xl font-extrabold text-white lg:text-8xl">
+              RELAX & RECHARGE
+            </h1>
+            <p className="mt-4text-2xl text-pink-500 lg:text-2xl">
+              Find your balance and refresh your soul.
+            </p>
             <div className="mt-6">
-              <button className="bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-6 rounded-full mx-2">
-              <Link href="/appointment">
-                Book Now
-              </Link>
+              <button className="mx-2 rounded-full bg-pink-500 px-6 py-2 font-bold text-white hover:bg-pink-600">
+                <Link href="/appointment">Book Now</Link>
               </button>
-              <button className="bg-gray-700 hover:bg-gray-800 text-white font-bold py-2 px-6 rounded-full mx-2">
-              <Link href="/contact">
-                Contact Us
-                </Link>
+              <button className="mx-2 rounded-full bg-gray-700 px-6 py-2 font-bold text-white hover:bg-gray-800">
+                <Link href="/contact">Contact Us</Link>
               </button>
             </div>
           </div>

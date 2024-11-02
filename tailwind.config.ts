@@ -12,9 +12,14 @@ const config: Config = {
     extend: {
       colors: {
         pink: {
-          DEFAULT: '#FF69B4', // Primary pink color
-          light: '#FFC0CB',
-          dark: '#C71585',
+          DEFAULT: "#FF69B4", 
+          light: "#FFC0CB",
+          dark: "#C71585",
+        },
+        textShadow: {
+          default: "12px 22px 10px rgba(0, 0, 0, 0.5)",
+          md: "13px 14px 10 rgba(0, 0, 0, 0.5)",
+          lg: "14px 24px 10 rgba(0, 0, 0, 0.5)",
         },
       },
     },
